@@ -1,0 +1,211 @@
+/* 
+css art
+https://dev.to/poulamic/intro-to-creating-css-art-1ep5
+https://medium.com/coding-artist/a-beginners-guide-to-pure-css-images-ef9a5d069dd2
+https://codepen.io/lachlanjc/pen/QWLwVb
+https://codepen.io/simoami/pen/eYrPdz
+*/
+
+/* general styling */
+:root {
+  --shadow: 0px 1px 2.2px rgba(0, 0, 0, 0.02),
+    0px 2.5px 5.3px rgba(0, 0, 0, 0.028), 0px 4.6px 10px rgba(0, 0, 0, 0.035),
+    0px 8.3px 17.9px rgba(0, 0, 0, 0.042), 0px 15.5px 33.4px rgba(0, 0, 0, 0.05),
+    0px 37px 80px rgba(0, 0, 0, 0.07);
+}
+
+body {
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  height: 16rem;
+  width: 500px;
+  perspective: 600px;
+}
+
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back-tilting {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.front {
+  background-color: white;
+  display: grid;
+  place-content: center;
+}
+
+.front > img {
+  transform: translateX(50%);
+  width: 50%;
+}
+
+.back {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 45% 55%;
+  background-color: white;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.back-title {
+  font-size: 2.3rem;
+  border-right: 2px solid black;
+}
+
+.back-social-media {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.job-position {
+  font-weight: 600;
+  font-size: 0.852rem;
+  color: #6c757d;
+}
+
+li {
+  list-style: none;
+  margin: 0.5rem 1rem;
+}
+
+li > a {
+  display: flex;
+  text-decoration: none;
+  gap: 0.6rem;
+}
+
+li :is(a:active, a:visited) {
+  color: inherit;
+}
+
+.mouse-position-tracker {
+  position: absolute;
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  z-index: 2;
+}
+
+/* 1st, 4th, 7th */
+.mouse-position-tracker:nth-child(3n - 2) {
+  left: 0;
+}
+/* 2nd, 5th, 8th */
+.mouse-position-tracker:nth-child(3n - 1) {
+  left: calc(100% / 3);
+}
+
+/* 2nd, 5th, 8th */
+.mouse-position-tracker:nth-child(3n) {
+  right: 0;
+}
+
+/* 4 to 6 */
+.mouse-position-tracker:nth-child(n + 4):nth-child(-n + 6) {
+  top: calc(100% / 3);
+}
+/* 7 to 9 */
+.mouse-position-tracker:nth-child(n + 7):nth-child(-n + 9) {
+  bottom: 0;
+}
+
+.back-tilting {
+  position: relative;
+  width: 100%;
+  transform: rotateY(180deg);
+  aspect-ratio: 2 / 1;
+}
+
+.back {
+  position: absolute;
+  inset: 0;
+}
+
+.back > :where(h1, p) {
+  background: white;
+  padding: 0.2rem;
+  margin: 0;
+}
+
+.back {
+  --perspective: 500px;
+  --rotationX: 0;
+  --rotationY: 0;
+  --rotationZ: 0;
+  --angle: 15deg;
+  transform: perspective(var(--perspective)) rotateX(var(--rotationX))
+    rotateY(var(--rotationY)) rotateZ(var(--rotationZ));
+  transition: transform 500ms ease;
+}
+
+.mouse-position-tracker:nth-child(1):hover ~ .back {
+  --rotationX: var(--angle);
+  --rotationY: calc(var(--angle) * -1);
+}
+
+.mouse-position-tracker:nth-child(2):hover ~ .back {
+  --rotationX: var(--angle);
+}
+
+.mouse-position-tracker:nth-child(3):hover ~ .back {
+  --rotationX: var(--angle);
+  --rotationY: var(--angle);
+}
+
+.mouse-position-tracker:nth-child(4):hover ~ .back {
+  --rotationY: calc(var(--angle) * -1);
+}
+
+.mouse-position-tracker:nth-child(6):hover ~ .back {
+  --rotationY: var(--angle);
+}
+
+.mouse-position-tracker:nth-child(7):hover ~ .back {
+  --rotationY: calc(var(--angle) * -1);
+  --rotationX: calc(var(--angle) * -1);
+}
+
+.mouse-position-tracker:nth-child(8):hover ~ .back {
+  --rotationX: calc(var(--angle) * -1);
+}
+
+.mouse-position-tracker:nth-child(9):hover ~ .back {
+  --rotationY: var(--angle);
+  --rotationX: calc(var(--angle) * -1);
+}

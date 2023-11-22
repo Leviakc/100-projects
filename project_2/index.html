@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Business card</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="Locky.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="card">
+        <div class="front">
+          <img src="logo.png" alt="Locky's logo" />
+        </div>
+        <div class="back-tilting">
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="mouse-position-tracker"></div>
+          <div class="back">
+            <h1 class="back-title">Juan Gomen</h1>
+            <div class="back-social-media tilting-card-body">
+              <p class="job-position">Assistant (to the) regional manager</p>
+              <ul>
+                <li>
+                  <a href="https://github.com/Leviakc">
+                    <img src="github.svg" alt="github icon" />
+                    Leviakc</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/juan_gomen/">
+                    <img src="instagram.svg" alt="instagram icon" />
+                    juan_gomen</a
+                  >
+                </li>
+                <li>
+                  <a href="https://gomen.bio/"
+                    ><img src="twitter.svg" alt="twitter icon" />spotless
+                    mind</a
+                  >
+                </li>
+                <li>
+                  <a href="https://gomen.bio/"
+                    ><img src="browser-firefox.svg" alt="firefox icon" />
+                    Website</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- .back { -->
+<!--   position: relative; -->
+<!--   aspect-ratio: 1 / 2; -->
+<!--   transform: rotateY(180deg); -->
+<!--   display: grid; -->
+<!--   place-content: center; -->
+<!--   text-align: center; -->
+<!--   box-shadow: var(--shadow); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker { -->
+<!--   position: absolute; -->
+<!--   width: calc(100% / 3); -->
+<!--   height: calc(100% / 3); -->
+<!--   z-index: 2; -->
+<!-- } -->
+<!--  -->
+<!-- /* 1st, 4th, 7th */ -->
+<!-- .mouse-position-tracker:nth-child(3n - 2) { -->
+<!--   left: 0; -->
+<!-- } -->
+<!-- /* 2nd, 5th, 8th */ -->
+<!-- .mouse-position-tracker:nth-child(3n - 1) { -->
+<!--   left: calc(100% / 3); -->
+<!-- } -->
+<!--  -->
+<!-- /* 2nd, 5th, 8th */ -->
+<!-- .mouse-position-tracker:nth-child(3n) { -->
+<!--   right: 0; -->
+<!-- } -->
+<!--  -->
+<!-- /* 4 to 6 */ -->
+<!-- .mouse-position-tracker:nth-child(n + 4):nth-child(-n + 6) { -->
+<!--   top: calc(100% / 3); -->
+<!-- } -->
+<!-- /* 7 to 9 */ -->
+<!-- .mouse-position-tracker:nth-child(n + 7):nth-child(-n + 9) { -->
+<!--   bottom: 0; -->
+<!-- } -->
+<!--  -->
+<!-- .tilting-card-body { -->
+<!--   position: absolute; -->
+<!--   inset: 0; -->
+<!--   background-color: white; -->
+<!--   display: grid; -->
+<!--   place-content: center; -->
+<!--   grid-template-columns: 45% 55%; -->
+<!-- } -->
+<!--  -->
+<!-- .tilting-card-body > :where(h1, p) { -->
+<!--   padding: 0.2rem; -->
+<!--   margin: 0 0.8rem; -->
+<!-- } -->
+<!--  -->
+<!-- .tilting-card-body-title { -->
+<!--   font-size: 2.3rem; -->
+<!--   border-right: 2px solid black; -->
+<!-- } -->
+<!--  -->
+<!--  -->
+<!-- .tilting-card-body { -->
+<!--   --perspective: 500px; -->
+<!--   --rotationX: 0; -->
+<!--   --rotationY: 0; -->
+<!--   --rotationZ: 0; -->
+<!--   --angle: 15deg; -->
+<!--   transform: perspective(var(--perspective)) rotateX(var(--rotationX)) -->
+<!--     rotateY(var(--rotationY)) rotateZ(var(--rotationZ)); -->
+<!--   transition: transform 500ms ease; -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(1):hover ~ .tilting-card-body { -->
+<!--   --rotationX: var(--angle); -->
+<!--   --rotationY: calc(var(--angle) * -1); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(2):hover ~ .tilting-card-body { -->
+<!--   --rotationX: var(--angle); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(3):hover ~ .tilting-card-body { -->
+<!--   --rotationX: var(--angle); -->
+<!--   --rotationY: var(--angle); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(4):hover ~ .tilting-card-body { -->
+<!--   --rotationY: calc(var(--angle) * -1); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(6):hover ~ .tilting-card-body { -->
+<!--   --rotationY: var(--angle); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(7):hover ~ .tilting-card-body { -->
+<!--   --rotationY: calc(var(--angle) * -1); -->
+<!--   --rotationX: calc(var(--angle) * -1); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(8):hover ~ .tilting-card-body { -->
+<!--   --rotationX: calc(var(--angle) * -1); -->
+<!-- } -->
+<!--  -->
+<!-- .mouse-position-tracker:nth-child(9):hover ~ .tilting-card-body { -->
+<!--   --rotationY: var(--angle); -->
+<!--   --rotationX: calc(var(--angle) * -1); -->
+<!-- } -->
