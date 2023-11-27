@@ -1,0 +1,157 @@
+/* 
+https://www.joshwcomeau.com/css/custom-css-reset/#three-tweaking-line-height-4
+https://stackoverflow.com/questions/65003407/setting-height100vh-vs-min-height100vh
+https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html
+
+css art
+https://dev.to/poulamic/intro-to-creating-css-art-1ep5
+https://medium.com/coding-artist/a-beginners-guide-to-pure-css-images-ef9a5d069dd2
+https://codepen.io/lachlanjc/pen/QWLwVb
+https://codepen.io/simoami/pen/eYrPdz
+*/
+body {
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url("../assets/studio-ghibli-style.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+}
+
+.panel {
+  background-color: #0d1f22;
+}
+
+/* .bg-img { */
+/*   background-image: url("../assets/studio-ghibli-style.webp"); */
+/*   background-size: cover; */
+/*   background-repeat: no-repeat; */
+/*   height: 100vh; */
+/*   width: 100vw; */
+/* } */
+/*  */
+
+.terminal {
+  width: 600px;
+  /* height: 80%; */
+  background-color: #0d1f22cf;
+}
+
+.terminal__btns {
+  display: flex;
+  background-color: #1c2321;
+  background-color: #0f1f2c;
+  list-style: none;
+  gap: 0.6rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.terminal__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+}
+
+.terminal__btn svg {
+  display: none;
+}
+
+.terminal__btn:hover svg {
+  display: block;
+  height: 9px;
+  width: 9px;
+}
+
+.minimize {
+  background-color: #f5cd79;
+}
+
+.maximize {
+  background-color: #61baa8;
+}
+
+.close {
+  background-color: #f08080;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 1rem;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.parent {
+  max-height: 100%;
+  width: 50%;
+  margin-left: 0.8rem;
+}
+
+.locky {
+  line-height: 1;
+  background-image: url("../assets/Locky1.svg");
+  /* background-image: linear-gradient( */
+  /* rgba(0, 0, 255, 0.5), */
+  /* rgba(255, 255, 0, 0.5) */
+  /* ), */
+  /* url("../Locky1.svg"); */
+  background-repeat: no-repeat;
+  background-size: 85% 50%;
+  background-clip: text;
+  /* background-origin: padding-box; */
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  background-position: left 0 top 145px;
+  font-size: 8px;
+  text-align: justify;
+  width: 240px;
+}
+
+.hello-world {
+  margin: 1rem;
+  color: white;
+}
+
+.grid-group {
+  display: grid;
+}
+
+.comment {
+  color: grey;
+}
+
+.lg__prints {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.lg__print:visited,
+.lg__print:link {
+  color: white;
+}
+
+.lg__print:hover {
+  color: red;
+}
