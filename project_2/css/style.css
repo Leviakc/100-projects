@@ -37,6 +37,7 @@ body {
   height: 16rem;
   width: 500px;
   perspective: 600px;
+  position: relative;
 }
 
 .container:hover > .card {
@@ -115,7 +116,56 @@ li :is(a:active, a:visited) {
   color: inherit;
 }
 
-.mouse-position-tracker {
+body > p {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 50px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 0 auto 3rem;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 4px;
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #3730a3;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+input:checked ~ .container .mouse-position-tracker {
   position: absolute;
   width: calc(100% / 3);
   height: calc(100% / 3);
